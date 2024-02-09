@@ -248,9 +248,9 @@ function shuffleAndCombine(arr1, arr2) {
     return combined;
 }
 
-// // Combine and shuffle high volatility and low volatility blocks randomly
-// const blocks = shuffleAndCombine(blocksHighVol, blocksLowVol);
-// console.log(blocks)
+// Combine and shuffle high volatility and low volatility blocks randomly
+const blocks = shuffleAndCombine(blocksHighVol, blocksLowVol);
+console.log(blocks)
 
 // //Alternatively, randomly decide whether to start withe the  low or the high volatility
 // const orderHighFirst = Math.random() < 0.5; // Determine the order randomly (true for high followed by low, false for low followed by high)
@@ -258,9 +258,9 @@ function shuffleAndCombine(arr1, arr2) {
 // console.log(blocks)
 
 
-//Create blocks array that starts with low volatility trials and then goes to high volatility
-const blocks = blocksLowVol.concat(blocksHighVol);
-console.log(blocks);
+// //Create blocks array that starts with low volatility trials and then goes to high volatility
+// const blocks = blocksLowVol.concat(blocksHighVol);
+// console.log(blocks);
 
 //defining prob for rewardProbChoice
 let prob;
