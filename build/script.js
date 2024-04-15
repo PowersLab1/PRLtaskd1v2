@@ -505,9 +505,15 @@ const game = {
             if (this.trials.length === this.trialLimits.reduce((a, b) => a + b, 0)) {
                 console.log(this.trials);
                     console.log('Finished the game');
-                    window.postMessage({ //used to be window.parent.postMessage...
+                    // Convert trials data to JSON string
+                    const trialsDataJson = JSON.stringify(this.trials);
+                    // Save the data in session storage
+                    sessionStorage.setItem('taskData', trialsDataJson);
+                    console.log('Saving to session storage:');
+                    //send data as Message for labjswrapper to nab in event listener
+                    window.postMessage({ 
                         type: 'labjs.data',
-                        json: JSON.stringify(this.trials)
+                        json: trialsDataJson
                     }, '*');
                 document.getElementById('completion-message').style.display = 'block';
                 document.getElementById('game-container').style.display = 'none';
