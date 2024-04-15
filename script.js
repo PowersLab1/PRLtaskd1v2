@@ -20,16 +20,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 //These event listeners let participants proceed through the instructions creens
 document.addEventListener('keydown', (event) => {
-    if (document.getElementById('instruction-screen1').style.display === 'block') {
-        document.getElementById('instruction-screen1').style.display = 'none';
-        document.getElementById('instruction-screen2').style.display = 'block';
-    } else if (document.getElementById('instruction-screen2').style.display === 'block') {
-        document.getElementById('instruction-screen2').style.display = 'none';
-        document.getElementById('instruction-screen3').style.display = 'block';
-    } else if (document.getElementById('instruction-screen3').style.display === 'block') {
-        document.getElementById('instruction-screen3').style.display = 'none';
-        document.getElementById('game-container').style.display = 'block';
-        game.startTrial();
+    if (event.key === "q" || event.key === "Q") {
+        if (document.getElementById('instruction-screen1').style.display === 'block') {
+            document.getElementById('instruction-screen1').style.display = 'none';
+            document.getElementById('instruction-screen2').style.display = 'block';
+        } else if (document.getElementById('instruction-screen2').style.display === 'block') {
+            document.getElementById('instruction-screen2').style.display = 'none';
+            document.getElementById('instruction-screen3').style.display = 'block';
+        } else if (document.getElementById('instruction-screen3').style.display === 'block') {
+            document.getElementById('instruction-screen3').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+            game.startTrial();
+        }
     }
 });
 
